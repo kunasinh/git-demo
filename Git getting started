@@ -1,0 +1,123 @@
+git config --global
+git config --global user.name "kunal"
+git config --global user.email "kunal.pcea@gmail.com"
+git config --global --list
+cat ~/.gitconfig
+cd /Projects
+git init git-demo
+cd git-demo
+git status
+git add README.md
+git status
+git commit -m "Initial Commit"
+
+
+to add and commit with single command
+git commit -am "Adding some text"
+
+to add all the modified files to git stagging area
+git add .
+
+to undo the changes to stagging directory
+git reset HEAD <filename>
+
+it will remove it from the stagging area, now to undo the changes 
+git checkout <filename>
+__________________________________________________
+
+to check the history of commits
+git log  -- > it gives the history of the commits made to the current repo in reverse chronological order with the  most recent commit on top
+
+to get a more compact history
+git log --oneline --graph --decorate --color
+__________________________________________________
+
+Removing the committed changes 
+
+git rm <filename>
+then commit the delete 
+git commit -m "removing ...."
+
+Another way to delete the commited the file
+delete the file without the knowledge of git using rm command
+rm <filename>
+
+git will detect that file is deleted but the changes will not be stagged for commit
+git add . --> it won't add the file to stagging for commit, works in uppper version
+git -u (for older verson of git to stg the changes)
+_________________________________________________________________
+
+move a file using git
+
+git mv index.html web
+then commit the changes
+_________________________________________________________________
+
+ignore files
+
+exclude the file that you dont want in your repo
+create a file as .gitignore 
+we can pass the path in the file as target or can provide *.log to ignore log files
+ _________________________________________________________________
+ 
+Setting up SSH authentication	
+mkdir .ssh
+ssh-keygen -t rsa -C "kunal.pcea@gmail.com"
+then copy the contents of the id_rsa.pub file and configure it on the github account
+
+connnect to github
+ssh -T git@github.com
+_________________________________________________________________
+
+Collaborating with others
+
+create a remote repository on git hub
+goto SSH and copy cmnd 
+add the remote origin from git prompt
+git remote add origin git@github.com:kunasinh/git-demo.git
+
+establish the upstream link with the remote repository 
+git push -u origin master(branch name)  --> all the local files will be pushed o remote repo
+once the upstream link is establshed we dont need to use -u command
+
+after making changes to file, commit the changes
+till this time chnges are not pushed to remote repo
+
+for best practise before pushing any changes pull the remote repo if any one else has made any changes to remote repo, to avoid any conflicts
+
+git pull origin master
+
+git push origin maser -- > changes will be successfully pushed to repo
+_________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+	
