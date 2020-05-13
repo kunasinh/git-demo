@@ -2,7 +2,7 @@
 
 This is the first file in this repo.
 
-##Ipsum Below
+##Spark streaming code Below
 import org.apache.spark._
 import org.apache.spark.streaming._
 sc.setLogLevel(ERROR)
